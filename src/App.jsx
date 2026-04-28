@@ -16,6 +16,7 @@ function App() {
 
   const [locationInput, setLocationInput] = useState('');
   const [votingDetails, setVotingDetails] = useState(null);
+  const [selectedCandidate, setSelectedCandidate] = useState(null);
 
   const calculateEligibility = () => {
     if (!dob) return;
@@ -43,7 +44,7 @@ function App() {
     }
   };
 
-  const API_URL = 'https://script.google.com/macros/s/AKfycbxgg0L_fk7Og6Vw-jvXciBvaebw8D5oEguO_wOwGQQ0BRwzj_kMvEu90QjKvxECCNKL/exec';
+  const API_URL = 'https://script.google.com/macros/s/AKfycbzvyBpO0v_qIx8V3dM4pv2bT6MT1nVZyvxmd7Gz_zEV6H6WFIgDWXCHpKxXWOy_PhiviA/exec';
 
   const handleContinue = async () => {
     setError('');
@@ -225,7 +226,7 @@ function App() {
     <div className="journey-card">
       <div style={{ fontSize: '48px', marginBottom: '16px' }}>🗳️</div>
       <h2 style={{ fontSize: '24px', color: 'var(--primary-blue)', marginBottom: '24px' }}>Your Voting Journey</h2>
-      
+
       <div className="progress-container">
         {steps.map((step, index) => (
           <div key={index} className={`progress-step ${index < currentStepIndex ? 'completed' : ''} ${index === currentStepIndex ? 'active' : ''}`}>
@@ -351,19 +352,106 @@ function App() {
     </div>
   );
 
-  const handleFindDetails = () => {
+  // Direct API call to fetch voting booth details
+  const handleFindDetails = async () => {
     if (!locationInput) return;
+
     setLoading(true);
-    // Simulate network request
-    setTimeout(() => {
-      setVotingDetails({
-        booth: 'Community Hall, Sector 4',
-        date: 'May 15, 2026',
-        time: '7:00 AM - 6:00 PM',
-        documents: 'Voter ID, Aadhaar Card, or Passport'
-      });
+    setError('');
+    setVotingDetails(null);
+
+    const cleanInput = locationInput
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, ' ');
+    console.log("Final Input Sent:", cleanInput);
+
+    try {
+      let data = null;
+
+      // 🚀 TRY PROXY FIRST
+      try {
+        const res = await fetch(
+          `https://corsproxy.io/?${encodeURIComponent(API_URL)}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({
+              action: 'find_booth',
+              input: cleanInput
+            })
+          }
+        );
+
+        const text = await res.text();
+        try {
+          data = JSON.parse(text);
+          console.log("Proxy Response Data:", data);
+        } catch (parseErr) {
+          console.error("Invalid JSON from proxy:", text);
+        }
+      } catch (proxyError) {
+        console.warn("Proxy failed, trying fallback...");
+      }
+
+      // 🚀 FALLBACK (DIRECT CALL)
+      if (!data) {
+        await fetch(API_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'find_booth',
+            input: cleanInput
+          })
+        });
+        console.log("Fallback used (no-cors)");
+        // With no-cors, we can't read the response.
+        // We'll show a generic success or keep searching.
+      }
+
+      // 🚀 PROCESS DATA
+      if (data && data.success) {
+        setVotingDetails({
+          booth: data.booth,
+          address: data.address,
+          date: new Date(data.date).toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          }),
+          time: data.time,
+          documents: 'Voter ID, Aadhaar Card, or Passport'
+        });
+      } else if (data && !data.success) {
+        setError('No booth found, try another location');
+      } else {
+        // If data is null (fallback used), we can't be sure, 
+        // but maybe the server side handled it.
+        // For now, if no data, we don't update details.
+      }
+
+    } catch (err) {
+      console.error("Final error:", err);
+      setError('Service temporarily unavailable. Try again.');
+    } finally {
       setLoading(false);
-    }, 800);
+    }
+  };
+
+
+  const handleViewMap = () => {
+    if (votingDetails?.address) {
+      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(votingDetails.address)}`;
+      window.open(url, '_blank');
+    }
+  };
+
+  const handleGetDirections = () => {
+    if (votingDetails?.address) {
+      const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(votingDetails.address)}`;
+      window.open(url, '_blank');
+    }
   };
 
   const renderVotingDetails = () => (
@@ -382,29 +470,142 @@ function App() {
         />
       </div>
       <button onClick={handleFindDetails} disabled={loading}>
-        {loading ? <span className="loading-spinner"></span> : 'Search'}
+        {loading ? <span className="loading-spinner"></span> : 'Find My Voting Details'}
       </button>
+
+      {error && <p className="error-message" style={{ marginTop: '12px' }}>{error}</p>}
 
       {votingDetails && (
         <div className="details-result" style={{ marginTop: '24px', textAlign: 'left', background: 'white', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
           <h3 style={{ color: 'var(--primary-blue)', marginBottom: '12px', fontSize: '18px' }}>Booth Information</h3>
-          <p style={{ marginBottom: '8px' }}><strong>Location:</strong> {votingDetails.booth}</p>
+          <p style={{ marginBottom: '8px' }}>
+            <strong>Booth:</strong> {votingDetails.booth}
+          </p>
+          <p style={{ marginBottom: '8px' }}><strong>Address:</strong> {votingDetails.address}</p>
           <p style={{ marginBottom: '8px' }}><strong>Date:</strong> {votingDetails.date}</p>
           <p style={{ marginBottom: '8px' }}><strong>Time:</strong> {votingDetails.time}</p>
           <p style={{ marginBottom: '8px' }}><strong>Required Documents:</strong> {votingDetails.documents}</p>
-          
-          <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
-            <button style={{ flex: 1, padding: '12px', fontSize: '14px' }}>View on Map</button>
-            <button className="secondary" style={{ flex: 1, padding: '12px', fontSize: '14px' }}>Directions</button>
+
+          <div className="map-preview" style={{ marginTop: '16px', borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', height: '150px', background: '#f1f5f9' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(votingDetails.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+            ></iframe>
           </div>
+
+          <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
+            <button 
+              style={{ flex: 1, padding: '12px', fontSize: '14px' }} 
+              onClick={handleViewMap}
+            >
+              View on Map
+            </button>
+            <button 
+              className="secondary" 
+              style={{ flex: 1, padding: '12px', fontSize: '14px' }} 
+              onClick={handleGetDirections}
+            >
+              Get Directions
+            </button>
+          </div>
+          <button 
+            style={{ width: '100%', marginTop: '16px', background: 'var(--success, #10b981)', color: 'white' }} 
+            onClick={() => setScreen('candidates')}
+          >
+            Proceed to Vote
+          </button>
         </div>
       )}
       <button className="secondary" onClick={() => setScreen('journey')} style={{ marginTop: '16px' }}>Back to Dashboard</button>
     </div>
   );
 
+  const renderCandidateSelection = () => (
+    <div className="candidate-card" style={{ padding: '20px', maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
+      <header style={{ marginBottom: '20px' }}>
+        <h2>Select Candidate</h2>
+        <p className="subtitle">Choose your preferred candidate or party</p>
+      </header>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {['Party A', 'Party B', 'Party C'].map(candidate => (
+          <button 
+            key={candidate}
+            className="secondary" 
+            style={{ padding: '16px', fontSize: '18px', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+            onClick={() => {
+              setSelectedCandidate(candidate);
+              setScreen('evm');
+            }}
+          >
+            <span>{candidate}</span>
+            <span style={{ fontSize: '24px', lineHeight: 1 }}>🔘</span>
+          </button>
+        ))}
+      </div>
+      <button className="secondary" onClick={() => setScreen('voting_details')} style={{ marginTop: '24px' }}>Back</button>
+    </div>
+  );
+
+  const renderEVM = () => (
+    <div className="evm-card" style={{ padding: '20px', maxWidth: '400px', margin: '0 auto', textAlign: 'center', background: '#1e293b', color: 'white', borderRadius: '16px' }}>
+      <header style={{ marginBottom: '20px' }}>
+        <h2 style={{ color: '#fff', fontSize: '20px' }}>Electronic Voting Machine</h2>
+      </header>
+      <div style={{ background: '#0f172a', padding: '32px 24px', borderRadius: '12px', marginBottom: '24px', border: '2px solid #334155' }}>
+        <p style={{ color: '#94a3b8', marginBottom: '12px', fontSize: '14px' }}>You selected:</p>
+        <h3 style={{ fontSize: '28px', color: '#38bdf8', margin: 0 }}>{selectedCandidate}</h3>
+      </div>
+      <button 
+        style={{ width: '100%', background: '#ef4444', color: 'white', padding: '16px', fontSize: '18px', fontWeight: 'bold', border: 'none' }}
+        onClick={() => setScreen('vote_success')}
+      >
+        Confirm Vote
+      </button>
+      <button 
+        className="secondary" 
+        style={{ width: '100%', marginTop: '12px', background: 'transparent', color: '#cbd5e1', border: '1px solid #475569' }}
+        onClick={() => setScreen('candidates')}
+      >
+        Cancel
+      </button>
+    </div>
+  );
+
+  const renderVoteSuccess = () => (
+    <div className="success-card" style={{ padding: '32px 20px', maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
+      <div style={{ fontSize: '64px', marginBottom: '16px' }}>✅</div>
+      <h2 style={{ color: '#10b981', marginBottom: '16px' }}>Vote Submitted Successfully</h2>
+      <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', lineHeight: 1.5 }}>
+        Your vote has been securely recorded. Thank you for participating in the democratic process!
+      </p>
+      <button 
+        style={{ width: '100%' }}
+        onClick={() => {
+          setScreen('journey');
+          setCurrentStepIndex(4); // Advance journey
+        }}
+      >
+        Return to Dashboard
+      </button>
+    </div>
+  );
+
   return (
     <div className="container">
+      <div className="brand-header" style={{ textAlign: 'center', marginBottom: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="#1E40AF"/>
+          <path d="M12 20L18 26L28 14" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="8" y="8" width="24" height="24" rx="4" stroke="white" stroke-width="2" stroke-opacity="0.3"/>
+          <circle cx="32" cy="8" r="4" fill="#10B981"/>
+        </svg>
+        <span style={{ fontSize: '28px', fontWeight: 'bold', color: '#1E40AF', letterSpacing: '-1px' }}>Sahayak</span>
+      </div>
+
       {screen === 'eligibility' && renderEligibility()}
       {screen === 'registration' && renderRegistration()}
       {screen === 'otp' && renderOtp()}
@@ -415,6 +616,9 @@ function App() {
       {screen === 'solution_new_registration' && renderSolutionNewRegistration()}
       {screen === 'solution_address_change' && renderSolutionAddressChange()}
       {screen === 'voting_details' && renderVotingDetails()}
+      {screen === 'candidates' && renderCandidateSelection()}
+      {screen === 'evm' && renderEVM()}
+      {screen === 'vote_success' && renderVoteSuccess()}
       {screen === 'journey' && renderJourney()}
     </div>
   );

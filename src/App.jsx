@@ -360,57 +360,37 @@ function App() {
     setError('');
     setVotingDetails(null);
 
-    const cleanInput = locationInput
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, ' ');
-    console.log("Final Input Sent:", cleanInput);
+    // 1. Normalize input
+    const cleanInput = locationInput.toLowerCase().trim();
+
+    if (!cleanInput) {
+      setError('Please enter a city or pincode');
+      setLoading(false);
+      return;
+    }
+
+    console.log("Sending direct request for:", cleanInput);
 
     try {
-      let data = null;
+      // 🚀 DIRECT CALL (No proxy, no-cors removed)
+      // Using 'text/plain' content-type is a trick to avoid CORS preflight (OPTIONS)
+      // which Google Apps Script doesn't support.
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain', 
+        },
+        body: JSON.stringify({
+          action: 'find_booth',
+          input: cleanInput
+        })
+      });
 
-      // 🚀 TRY PROXY FIRST
-      try {
-        const res = await fetch(
-          `https://corsproxy.io/?${encodeURIComponent(API_URL)}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'text/plain' },
-            body: JSON.stringify({
-              action: 'find_booth',
-              input: cleanInput
-            })
-          }
-        );
+      if (!res.ok) throw new Error('Network response was not ok');
 
-        const text = await res.text();
-        try {
-          data = JSON.parse(text);
-          console.log("Proxy Response Data:", data);
-        } catch (parseErr) {
-          console.error("Invalid JSON from proxy:", text);
-        }
-      } catch (proxyError) {
-        console.warn("Proxy failed, trying fallback...");
-      }
+      const data = await res.json();
+      console.log("Direct API Response:", data);
 
-      // 🚀 FALLBACK (DIRECT CALL)
-      if (!data) {
-        await fetch(API_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            action: 'find_booth',
-            input: cleanInput
-          })
-        });
-        console.log("Fallback used (no-cors)");
-        // With no-cors, we can't read the response.
-        // We'll show a generic success or keep searching.
-      }
-
-      // 🚀 PROCESS DATA
       if (data && data.success) {
         setVotingDetails({
           booth: data.booth,
@@ -423,20 +403,20 @@ function App() {
           time: data.time,
           documents: 'Voter ID, Aadhaar Card, or Passport'
         });
-      } else if (data && !data.success) {
-        setError('No booth found, try another location');
       } else {
-        // If data is null (fallback used), we can't be sure, 
-        // but maybe the server side handled it.
-        // For now, if no data, we don't update details.
+        setError('No booth found for "' + locationInput + '". Try another location.');
       }
 
     } catch (err) {
-      console.error("Final error:", err);
-      setError('Service temporarily unavailable. Try again.');
+      console.error("Search Error:", err);
+      setError('Service temporarily unavailable. Please try again later.');
     } finally {
       setLoading(false);
     }
+
+
+
+
   };
 
 

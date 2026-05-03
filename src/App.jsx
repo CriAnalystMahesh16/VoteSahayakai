@@ -40,98 +40,99 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbzvyBpO0v_qIx8V3dM4pv2b
 const TRANSLATIONS = {
   en: {
     appTitle: "Sahayak",
+    tagline: "Simplifying the voting journey for every citizen",
     electionLive: "Election 2026 Live",
-    eligibility: "Voting Eligibility",
-    eligibilitySub: "Check if you are ready to make a difference",
+    eligibility: "Step 1: Eligibility",
+    eligibilitySub: "Am I eligible to vote?",
     dob: "Date of Birth",
-    checkEligibility: "Check Eligibility",
-    eligible: "🎉 You are eligible to vote!",
-    notEligible: "You are not eligible yet",
-    startRegistration: "Start Registration",
+    checkEligibility: "Verify Eligibility",
+    eligible: "🎉 You are eligible! Proceed to Step 2.",
+    notEligible: "You do not meet the age requirement yet.",
+    startRegistration: "Continue to Registration",
     setReminder: "Set Reminder",
-    registration: "Registration",
-    registrationSub: "Complete your profile to proceed",
+    registration: "Step 2: Registration",
+    registrationSub: "How to register as a voter?",
     email: "Email Address",
     mobile: "Mobile Number (Optional)",
-    continue: "Continue",
+    continue: "Complete Registration",
     verification: "Verification",
     verificationSub: "Enter the code sent to your email",
     verifyOtp: "Verify OTP",
     resendCode: "Resend Code",
     changeEmail: "Change Email",
-    journey: "Voting Journey",
-    journeySub: "Track your progress",
-    continueJourney: "Continue Journey",
-    findBooth: "Find Booth Details",
+    journey: "Your Voting Journey",
+    journeySub: "Follow these 4 steps to vote",
+    continueJourney: "Next Step",
+    findBooth: "Find where you need to vote",
     welcome: "Welcome to Sahayak",
-    onboardingSub: "Quick guide to get you started",
-    boothDetails: "Booth Details",
-    findMyBooth: "Find My Booth",
-    selectCandidate: "Select Candidate",
-    evmConfirm: "EVM Confirmation",
-    confirmVote: "CONFIRM VOTE",
+    onboardingSub: "Your guided path to the polling booth",
+    boothDetails: "Where to vote?",
+    findMyBooth: "Locate My Polling Booth",
+    selectCandidate: "Step 4: Voting",
+    evmConfirm: "How voting works?",
+    confirmVote: "CAST PRACTICE VOTE",
     cancel: "CANCEL",
-    voteRecorded: "Vote Successfully Recorded!",
-    returnHome: "Go to Main Screen",
-    downloadReceipt: "Download Receipt",
+    voteRecorded: "Practice Vote Successful!",
+    returnHome: "Return to Journey Dashboard",
+    downloadReceipt: "Download Voter Slip",
     referenceId: "Reference ID",
     back: "Back",
-    pincode: "City or Pincode",
-    step1: "Eligibility",
-    step2: "Registration",
-    step3: "Verification",
-    step4: "Voting",
-    helpTitle: "How can we help?",
-    helpSub: "Select your issue to find a solution",
+    pincode: "Enter City or Pincode",
+    step1: "Check Eligibility",
+    step2: "Register to Vote",
+    step3: "Find where you need to vote",
+    step4: "Understand the Voting Process",
+    helpTitle: "Need Help?",
+    helpSub: "Quick solutions for common voting issues",
     resolved: "Mark as Resolved",
-    dashboard: "Dashboard",
+    dashboard: "My Voting Dashboard",
     issue1: "Name not in voter list",
     issue2: "Wrong details in voter ID",
     issue3: "New voter registration",
     issue4: "Address change",
-    sol1: "Guide the user to verify their registration details with the electoral office and ensure the name matches official records.",
-    sol2: "Instruct the user to submit a correction request with supporting documents (e.g., birth certificate, address proof).",
-    sol3: "Provide steps to register as a new voter: fill the online form, upload documents, and await verification.",
-    sol4: "Explain how to update address via the electoral portal or by visiting the local office with proof of residence.",
+    sol1: "Visit the official NVSP portal to verify your name in the electoral roll or contact your local BLO.",
+    sol2: "Submit Form 8 on the voter portal with correct supporting documents for any modifications.",
+    sol3: "Fill Form 6 on the official portal. You will need age and address proof for new registration.",
+    sol4: "Submit Form 8A for transposition within the same constituency or Form 6 for shifting to a new one.",
     mobileView: "Mobile View",
     webView: "Web View",
-    healthMeter: "Civic Health Score",
-    quickActions: "Quick Actions",
-    roadmap: "Election Roadmap",
-    notif1: "All citizens above 18 are eligible.",
-    notif2: "Use Find Booth to locate your polling station.",
-    assistantTitle: "Civic Assistant",
-    assistantGreet: "Hello! How can I help you today?",
+    healthMeter: "Voting Readiness Progress",
+    quickActions: "Quick Tools: Solve voting issues",
+    roadmap: "The 4-Step Journey",
+    notif1: "18+ citizens are eligible to register.",
+    notif2: "Carry your ID to the polling station.",
+    assistantTitle: "Voting AI Assistant",
+    assistantGreet: "Hi! Ask me anything about eligibility, registration, finding booths, or the voting process.",
     askBooth: "Where is my booth?",
-    askDocs: "Documents needed?",
-    askHow: "How to vote?",
-    suggestion1: "Check Eligibility",
-    suggestion2: "Find My Booth",
+    askDocs: "What documents do I need?",
+    askHow: "How do I cast my vote?",
+    suggestion1: "Eligibility Check",
+    suggestion2: "Booth Location",
     suggestion3: "Voting Guide",
-    votingGuideTitle: "Voting Guide",
-    votingGuideSub: "Everything you need to know about the voting process",
-    guideStep1: "Carry your ID",
-    guideStep1Desc: "Bring your Voter ID or any government ID like Aadhaar.",
-    guideStep2: "Identify your Booth",
-    guideStep2Desc: "Use our booth finder to locate your polling station.",
-    guideStep3: "Verify & Ink",
-    guideStep3Desc: "Polling officer will verify your ID and apply indelible ink.",
-    guideStep4: "Cast your Vote",
-    guideStep4Desc: "Press the button on the EVM for your candidate.",
-    startSimulation: "Start Voting Simulation",
+    votingGuideTitle: "How to Vote?",
+    votingGuideSub: "Step-by-step guide for election day",
+    guideStep1: "Step 1: ID Check",
+    guideStep1Desc: "Bring your Voter ID or Aadhaar Card.",
+    guideStep2: "Step 2: Find Booth",
+    guideStep2Desc: "Use our 'Locate Booth' tool to find your center.",
+    guideStep3: "Step 3: Identification",
+    guideStep3Desc: "Officer will verify your name and apply ink.",
+    guideStep4: "Step 4: The EVM",
+    guideStep4Desc: "Press the blue button next to your candidate.",
+    startSimulation: "Practice Voting (EVM)",
     greeting: "Namaste",
-    greetingSub: "Your personal civic hub. Let's get you ready to vote.",
-    readyMsg: "🎉 You are 100% ready for Election Day!",
-    pendingMsg: "Complete more steps to reach 100%",
+    greetingSub: "We've simplified the complex voting process into 4 easy steps.",
+    readyMsg: "🎉 You are fully prepared to vote!",
+    pendingMsg: "Complete the remaining steps to be ready.",
     notifBadge: "AI",
     online: "Online",
     typing: "Typing...",
-    suggestionsLabel: "Suggestions:",
-    downloadSlip: "Download your digital voter slip now!",
-    roadmapDesc1: "Check if you are eligible to vote",
-    roadmapDesc2: "Register your profile for verification",
-    roadmapDesc3: "Find your polling booth location",
-    roadmapDesc4: "Practice using the EVM machine"
+    suggestionsLabel: "How can I help?",
+    downloadSlip: "Get your digital voter slip",
+    roadmapDesc1: "Confirm your eligibility to vote",
+    roadmapDesc2: "Complete your profile registration",
+    roadmapDesc3: "Find your assigned polling booth",
+    roadmapDesc4: "Learn how to use the EVM machine"
   },
   hi: {
     appTitle: "सहायक",
@@ -956,358 +957,19 @@ const TRANSLATIONS = {
     roadmapDesc3: "ਆਪਣੇ ਪੋਲਿੰਗ ਬੂਥ ਦੀ ਸਥਿਤੀ ਲੱਭੋ",
     roadmapDesc4: "ਈਵੀਐਮ ਮਸ਼ੀਨ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦਾ ਅਭਿਆਸ ਕਰੋ"
   },
-  ta: {
-    appTitle: "சஹாயக்",
-    electionLive: "தேர்தல் 2026 நேரலை",
-    eligibility: "வாக்களிக்கும் தகுதி",
-    eligibilitySub: "நீங்கள் மாற்றத்தை ஏற்படுத்த தயாராக உள்ளீர்களா என சரிபார்க்கவும்",
-    dob: "பிறந்த தேதி",
-    checkEligibility: "தகுதியை சரிபார்க்கவும்",
-    eligible: "🎉 நீங்கள் வாக்களிக்க தகுதியுடையவர்!",
-    notEligible: "நீங்கள் இன்னும் தகுதியடையவில்லை",
-    startRegistration: "பதிவைத் தொடங்கவும்",
-    setReminder: "நினைவூட்டலை அமைக்கவும்",
-    registration: "பதிவு",
-    registrationSub: "தொடர உங்கள் சுயவிவரத்தை முடிக்கவும்",
-    email: "மின்னஞ்சல் முகவரி",
-    mobile: "மொபைல் எண் (விரும்பினால்)",
-    continue: "தொடரவும்",
-    verification: "சரிபார்ப்பு",
-    verificationSub: "உங்கள் மின்னஞ்சலுக்கு அனுப்பப்பட்ட குறியீட்டை உள்ளிடவும்",
-    verifyOtp: "OTP ஐ சரிபார்க்கவும்",
-    resendCode: "குறியீட்டை மீண்டும் அனுப்பு",
-    changeEmail: "மின்னஞ்சலை மாற்று",
-    journey: "வாக்களிக்கும் பயணம்",
-    journeySub: "உங்கள் முன்னேற்றத்தைக் கண்காணிக்கவும்",
-    continueJourney: "பயணத்தைத் தொடரவும்",
-    findBooth: "சாவடி விவரங்களைக் கண்டறியவும்",
-    welcome: "சஹாயக்கிற்கு வரவேற்கிறோம்",
-    onboardingSub: "தொடங்குவதற்கான விரைவான வழிகாட்டி",
-    boothDetails: "சாவடி விவரங்கள்",
-    findMyBooth: "என் சாவடியைக் கண்டறியவும்",
-    selectCandidate: "வேட்பாளரைத் தேர்ந்தெடுக்கவும்",
-    evmConfirm: "EVM உறுதிப்படுத்தல்",
-    confirmVote: "வாக்கை உறுதிப்படுத்தவும்",
-    cancel: "ரத்து செய்",
-    voteRecorded: "வாக்கு வெற்றிகரமாக பதிவு செய்யப்பட்டது!",
-    returnHome: "பிரதான திரைக்குத் திரும்புக",
-    downloadReceipt: "ரசீதைப் பதிவிறக்கவும்",
-    referenceId: "குறிப்பு ஐடி",
-    back: "பின்னால்",
-    pincode: "நகரம் அல்லது பின்கோடு",
-    step1: "தகுதி",
-    step2: "பதிவு",
-    step3: "சரிபார்ப்பு",
-    step4: "வாக்களிப்பு",
-    helpTitle: "நாங்கள் எப்படி உதவ முடியும்?",
-    helpSub: "தீர்வு காண உங்கள் சிக்கலைத் தேர்ந்தெடுக்கவும்",
-    resolved: "தீர்க்கப்பட்டதாகக் குறிக்கவும்",
-    dashboard: "டாஷ்போர்டு",
-    issue1: "வாக்காளர் பட்டியலில் பெயர் இல்லை",
-    issue2: "வாக்காளர் அடையாள அட்டையில் தவறான விவரங்கள்",
-    issue3: "புதிய வாக்காளர் பதிவு",
-    issue4: "முகவரி மாற்றம்",
-    mobileView: "மொபைல் காட்சி",
-    webView: "வலைக் காட்சி",
-    healthMeter: "குடிமக்கள் சுகாதார மதிப்பெண்",
-    quickActions: "விரைவான செயல்கள்",
-    roadmap: "தேர்தல் வரைபடம்",
-    notif1: "18 வயதுக்கு மேற்பட்ட அனைத்து குடிமக்களும் தகுதியுடையவர்கள்.",
-    notif2: "உங்கள் வாக்குச்சாவடியைக் கண்டறிய பூத் தேடலைப் பயன்படுத்தவும்.",
-    assistantTitle: "குடிமக்கள் உதவியாளர்",
-    assistantGreet: "வணக்கம்! நான் உங்களுக்கு இன்று எப்படி உதவ முடியும்?",
-    askBooth: "என் பூத் எங்கே இருக்கிறது?",
-    askDocs: "என்ன ஆவணங்கள் தேவை?",
-    askHow: "வாக்களிப்பது எப்படி?",
-    suggestion1: "தகுதியை சரிபார்க்கவும்",
-    suggestion2: "என் பூத்தைக் கண்டுபிடி",
-    suggestion3: "வாக்களிக்கும் வழிகாட்டி"
-  },
-  kn: {
-    appTitle: "ಸಹಾಯಕ್",
-    electionLive: "ಚುನಾವಣೆ 2026 ಲೈವ್",
-    eligibility: "ಮತದಾನದ ಅರ್ಹತೆ",
-    eligibilitySub: "ನೀವು ಬದಲಾವಣೆಗಾಗಿ ಸಿದ್ಧರಿದ್ದೀರಾ ಎಂದು ಪರಿಶೀಲಿಸಿ",
-    dob: "ಹುಟ್ಟಿದ ದಿನಾಂಕ",
-    checkEligibility: "ಅರ್ಹತೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
-    eligible: "🎉 ನೀವು ಮತದಾನ ಮಾಡಲು ಅರ್ಹರಿದ್ದೀರಿ!",
-    notEligible: "ನೀವು ಇನ್ನೂ ಅರ್ಹರಲ್ಲ",
-    startRegistration: "ನೋಂದಣಿ ಪ್ರಾರಂಭಿಸಿ",
-    setReminder: "ಜ್ಞಾಪನೆ ಹೊಂದಿಸಿ",
-    registration: "ನೋಂದಣಿ",
-    registrationSub: "ಮುಂದುವರಿಯಲು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಳಿಸಿ",
-    email: "ಇಮೇಲ್ ವಿಳಾಸ",
-    mobile: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ (ಐಚ್ಛಿಕ)",
-    continue: "ಮುಂದುವರಿಸಿ",
-    verification: "ಪರಿಶೀಲನೆ",
-    verificationSub: "ನಿಮ್ಮ ಇಮೇಲ್‌ಗೆ ಕಳುಹಿಸಲಾದ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ",
-    verifyOtp: "OTP ಪರಿಶೀಲಿಸಿ",
-    resendCode: "ಕೋಡ್ ಮತ್ತೆ ಕಳುಹಿಸಿ",
-    changeEmail: "ಇಮೇಲ್ ಬದಲಾಯಿಸಿ",
-    journey: "ಮತದಾನದ ಪ್ರಯಾಣ",
-    journeySub: "ನಿಮ್ಮ ಪ್ರಗತಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
-    continueJourney: "ಪ್ರಯಾಣ ಮುಂದುವರಿಸಿ",
-    findBooth: "ಬೂತ್ ವಿವರಗಳನ್ನು ಹುಡುಕಿ",
-    welcome: "ಸಹಾಯಕ್ ಗೆ ಸ್ವಾಗತ",
-    onboardingSub: "ಪ್ರಾರಂಭಿಸಲು ತ್ವರಿತ ಮಾರ್ಗದರ್ಶಿ",
-    boothDetails: "ಬೂತ್ ವಿವರಗಳು",
-    findMyBooth: "ನನ್ನ ಬೂತ್ ಹುಡುಕಿ",
-    selectCandidate: "ಅಭ್ಯರ್ಥಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-    evmConfirm: "EVM ದೃಢೀಕರಣ",
-    confirmVote: "ಮತವನ್ನು ದೃಢೀಕರಿಸಿ",
-    cancel: "ರದ್ದುಮಾಡಿ",
-    voteRecorded: "ಮತ ಯಶಸ್ವಿಯಾಗಿ ದಾಖಲಾಗಿದೆ!",
-    returnHome: "ಮುಖ್ಯ ಪರದೆಗೆ ಹೋಗಿ",
-    downloadReceipt: "ರಶೀದಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-    referenceId: "ಉಲ್ಲೇಖ ID",
-    back: "ಹಿಂದೆ",
-    pincode: "ನಗರ ಅಥವಾ ಪಿನ್‌ಕೋಡ್",
-    step1: "ಅರ್ಹತೆ",
-    step2: "ನೋಂದಣಿ",
-    step3: "ಪರಿಶೀಲನೆ",
-    step4: "ಮತದಾನ",
-    helpTitle: "ನಾವು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
-    helpSub: "ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-    resolved: "ಪರಿಹರಿಸಲಾಗಿದೆ",
-    dashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
-    issue1: "ಮತದಾರರ ಪಟ್ಟಿಯಲ್ಲಿ ಹೆಸರಿಲ್ಲ",
-    issue2: "ಮತದಾರರ ಗುರುತಿನ ಚೀಟಿಯಲ್ಲಿ ತಪ್ಪು ವಿವರಗಳು",
-    issue3: "ಹೊಸ ಮತದಾರರ ನೋಂದಣಿ",
-    issue4: "ವಿಳಾಸ ಬದಲಾವಣೆ",
-    mobileView: "ಮೊಬೈಲ್ ನೋಟ",
-    webView: "ವೆಬ್ ನೋಟ",
-    healthMeter: "ನಾಗರಿಕ ಆರೋಗ್ಯ ಸ್ಕೋರ್",
-    quickActions: "ತ್ವರಿತ ಕ್ರಮಗಳು",
-    roadmap: "ಚುನಾವಣಾ ಮಾರ್ಗಸೂಚಿ",
-    notif1: "18 ವರ್ಷಕ್ಕಿಂತ ಮೇಲ್ಪಟ್ಟ ಎಲ್ಲಾ ನಾಗರಿಕರು ಅರ್ಹರು.",
-    notif2: "ನಿಮ್ಮ ಮತಗಟ್ಟೆಯನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಬೂತ್ ಸರ್ಚ್ ಬಳಸಿ.",
-    assistantTitle: "ನಾಗರಿಕ ಸಹಾಯಕ",
-    assistantGreet: "ನಮಸ್ಕಾರ! ನಾನು ನಿಮಗೆ ಇಂದು ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
-    askBooth: "ನನ್ನ ಬೂತ್ ಎಲ್ಲಿದೆ?",
-    askDocs: "ಯಾವ ದಾಖಲೆಗಳು ಬೇಕು?",
-    askHow: "ಮತದಾನ ಮಾಡುವುದು ಹೇಗೆ?",
-    suggestion1: "ಅರ್ಹತೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
-    suggestion2: "ನನ್ನ ಬೂತ್ ಹುಡುಕಿ",
-    suggestion3: "ಮತದಾನ ಮಾರ್ಗದರ್ಶಿ"
-  },
-  gu: {
-    appTitle: "સહાયક",
-    electionLive: "ચૂંટણી 2026 લાઈવ",
-    eligibility: "મતદાનની પાત્રતા",
-    eligibilitySub: "તપાસો કે તમે ફેરફાર માટે તૈયાર છો કે નહીં",
-    dob: "જન્મ તારીખ",
-    checkEligibility: "પાત્રતા તપાસો",
-    eligible: "🎉 તમે મતદાન માટે પાત્ર છો!",
-    notEligible: "તમે હજુ પાત્ર નથી",
-    startRegistration: "નોંધણી શરૂ કરો",
-    setReminder: "રિમાઇન્ડર સેટ કરો",
-    registration: "નોંધણી",
-    registrationSub: "આગળ વધવા માટે તમારી પ્રોફાઇલ પૂર્ણ કરો",
-    email: "ઇમેઇલ સરનામું",
-    mobile: "મોબાઇલ નંબર (વૈકલ્પિક)",
-    continue: "ચાલુ રાખો",
-    verification: "ચકાસણી",
-    verificationSub: "તમારા ઇમેઇલ પર મોકલેલો કોડ દાખલ કરો",
-    verifyOtp: "OTP ચકાસો",
-    resendCode: "કોડ ફરીથી મોકલો",
-    changeEmail: "ઇમેઇલ બદલો",
-    journey: "મતદાન પ્રવાસ",
-    journeySub: "તમારી પ્રગતિ ટ્રૅક કરો",
-    continueJourney: "પ્રવાસ ચાલુ રાખો",
-    findBooth: "બૂથ વિગતો શોધો",
-    welcome: "સહાયકમાં સ્વાગત છે",
-    onboardingSub: "તમને શરૂ કરવા માટે ઝડપી માર્ગદર્શિકા",
-    boothDetails: "બૂથ વિગતો",
-    findMyBooth: "મારું બૂથ શોધો",
-    selectCandidate: "ઉમેદવાર પસંદ કરો",
-    evmConfirm: "EVM પુષ્ટિ",
-    confirmVote: "મતની પુષ્ટિ કરો",
-    cancel: "રદ કરો",
-    voteRecorded: "મત સફળતાપૂર્વક નોંધાયો!",
-    returnHome: "મુખ્ય સ્ક્રીન પર જાઓ",
-    downloadReceipt: "રસીદ ડાઉનલોડ કરો",
-    referenceId: "સંદર્ભ ID",
-    back: "પાછા",
-    pincode: "શહેર અથવા પિનકોડ",
-    step1: "પાત્રતા",
-    step2: "નોંધણી",
-    step3: "ચકાસણી",
-    step4: "મતદાન",
-    helpTitle: "અમે કેવી રીતે મદદ કરી શકીએ?",
-    helpSub: "તમારી સમસ્યા પસંદ કરો",
-    resolved: "ઉકેલાઈ ગયું",
-    dashboard: "ડેશબોર્ડ",
-    issue1: "મતદાર યાદીમાં નામ નથી",
-    issue2: "મતદાર ID માં ખોટી વિગતો",
-    issue3: "નવી મતદાર નોંધણી",
-    issue4: "સરનામું ફેરફાર",
-    mobileView: "મોબાઇલ વ્યૂ",
-    webView: "વેબ વ્યૂ",
-    healthMeter: "નાગરિક આરોગ્ય સ્કોર",
-    quickActions: "ઝડપી કાર્યો",
-    roadmap: "ચૂંટણી રોડમેપ",
-    notif1: "18 વર્ષથી ઉપરના તમામ નાગરિકો પાત્ર છે.",
-    notif2: "તમારું મતદાન મથક શોધવા માટે બૂથ સર્ચનો ઉપયોગ કરો.",
-    assistantTitle: "નાગરિક સહાયક",
-    assistantGreet: "નમસ્તે! હું તમને આજે કેવી રીતે મદદ કરી શકું?",
-    askBooth: "મારું બૂથ ક્યાં છે?",
-    askDocs: "કયા દસ્તાવેજોની જરૂર છે?",
-    askHow: "મતદાન કેવી રીતે કરવું?",
-    suggestion1: "પાત્રતા તપાસો",
-    suggestion2: "મારું બૂથ શોધો",
-    suggestion3: "મતદાન માર્ગદર્શિકા"
-  },
-  ml: {
-    appTitle: "സഹായക്",
-    electionLive: "തിരഞ്ഞെടുപ്പ് 2026 ലൈവ്",
-    eligibility: "വോട്ടിംഗ് യോഗ്യത",
-    eligibilitySub: "നിങ്ങൾ മാറ്റത്തിന് തയ്യാറാണോ എന്ന് പരിശോധിക്കുക",
-    dob: "ജനനതീയതി",
-    checkEligibility: "യോഗ്യത പരിശോധിക്കുക",
-    eligible: "🎉 നിങ്ങൾ വോട്ട് ചെയ്യാൻ യോഗ്യനാണ്!",
-    notEligible: "നിങ്ങൾ ഇതുവരെ യോഗ്യനല്ല",
-    startRegistration: "രജിസ്ട്രേഷൻ ആരംഭിക്കുക",
-    setReminder: "റിമൈൻഡർ സജ്ജമാക്കുക",
-    registration: "രജിസ്ട്രേഷൻ",
-    registrationSub: "തുടരുന്നതിന് നിങ്ങളുടെ പ്രൊഫൈൽ പൂർത്തിയാക്കുക",
-    email: "ഇമെയിൽ വിലാസം",
-    mobile: "മൊബൈൽ നമ്പർ (ഓപ്ഷണൽ)",
-    continue: "തുടരുക",
-    verification: "പരിശോധന",
-    verificationSub: "നിങ്ങളുടെ ഇമെയിലിലേക്ക് അയച്ച കോഡ് നൽകുക",
-    verifyOtp: "OTP പരിശോധിക്കുക",
-    resendCode: "കോഡ് വീണ്ടും അയയ്ക്കുക",
-    changeEmail: "ഇമെയിൽ മാറ്റുക",
-    journey: "വോട്ടിംഗ് യാത്ര",
-    journeySub: "നിങ്ങളുടെ പുരോഗതി ട്രാക്ക് ചെയ്യുക",
-    continueJourney: "യാത്ര തുടരുക",
-    findBooth: "ബൂത്ത് വിവരങ്ങൾ കണ്ടെത്തുക",
-    welcome: "സഹായക്കിലേക്ക് സ്വാഗതം",
-    onboardingSub: "ആരംഭിക്കുന്നതിനുള്ള ദ്രുത ഗൈഡ്",
-    boothDetails: "ബൂത്ത് വിവരങ്ങൾ",
-    findMyBooth: "എന്റെ ബൂത്ത് കണ്ടെത്തുക",
-    selectCandidate: "സ്ഥാനാർത്ഥിയെ തിരഞ്ഞെടുക്കുക",
-    evmConfirm: "EVM സ്ഥിരീകരണം",
-    confirmVote: "വോട്ട് സ്ഥിരീകരിക്കുക",
-    cancel: "റദ്ദാക്കുക",
-    voteRecorded: "വോട്ട് വിജയകരമായി രേഖപ്പെടുത്തി!",
-    returnHome: "പ്രധാന സ്ക്രീനിലേക്ക് പോകുക",
-    downloadReceipt: "രസീത് ഡൗൺലോഡ് ചെയ്യുക",
-    referenceId: "റഫറൻസ് ഐഡി",
-    back: "പിന്നിലേക്ക്",
-    pincode: "നഗരം അല്ലെങ്കിൽ പിൻകോഡ്",
-    step1: "യോഗ്യത",
-    step2: "രജിസ്ട്രേഷൻ",
-    step3: "പരിശോധന",
-    step4: "വോട്ടിംഗ്",
-    helpTitle: "ഞങ്ങൾക്ക് എങ്ങനെ സഹായിക്കാം?",
-    helpSub: "നിങ്ങളുടെ പ്രശ്നം തിരഞ്ഞെടുക്കുക",
-    resolved: "പരിഹരിച്ചു",
-    dashboard: "ഡാഷ്‌ബോർഡ്",
-    issue1: "വോട്ടർ പട്ടികയിൽ പേരില്ല",
-    issue2: "വോട്ടർ ഐഡിയിൽ തെറ്റായ വിവരങ്ങൾ",
-    issue3: "പുതിയ വോട്ടർ രജിസ്ട്രേഷൻ",
-    issue4: "വിലാസം മാറ്റം",
-    mobileView: "മൊബൈൽ കാഴ്ച",
-    webView: "വെബ് കാഴ്ച",
-    healthMeter: "സിവിക് ഹെൽത്ത് സ്കോർ",
-    quickActions: "ദ്രുത നടപടികൾ",
-    roadmap: "തിരഞ്ഞെടുപ്പ് റോഡ്മാപ്പ്",
-    notif1: "18 വയസ്സിന് മുകളിലുള്ള എല്ലാ പൗരന്മാരും യോഗ്യരാണ്.",
-    notif2: "നിങ്ങളുടെ പോളിംഗ് സ്റ്റേഷൻ കണ്ടെത്താൻ ബൂത്ത് സെർച്ച് ഉപയോഗിക്കുക.",
-    assistantTitle: "സിവിക് അസിസ്റ്റന്റ്",
-    assistantGreet: "നമസ്കാരം! എനിക്ക് ഇന്ന് നിങ്ങളെ എങ്ങനെ സഹായിക്കാനാകും?",
-    askBooth: "എന്റെ ബൂത്ത് എവിടെയാണ്?",
-    askDocs: "ഏതൊക്കെ രേഖകൾ വേണം?",
-    askHow: "എങ്ങനെ വോട്ട് ചെയ്യാം?",
-    suggestion1: "യോഗ്യത പരിശോധിക്കുക",
-    suggestion2: "എന്റെ ബೂത്ത് കണ്ടെത്തുക",
-    suggestion3: "വോട്ടിംഗ് ഗೈഡ്"
-  },
-  pa: {
-    appTitle: "ਸਹਾਇਕ",
-    electionLive: "ਚੋਣਾਂ 2026 ਲਾਈਵ",
-    eligibility: "ਵੋਟਿੰਗ ਯੋਗਤਾ",
-    eligibilitySub: "ਜਾਂਚ ਕਰੋ ਕਿ ਕੀ ਤੁਸੀਂ ਬਦਲਾਅ ਲਈ ਤਿਆਰ ਹੋ",
-    dob: "ਜਨਮ ਮਿਤੀ",
-    checkEligibility: "ਯੋਗਤਾ ਦੀ ਜਾਂਚ ਕਰੋ",
-    eligible: "🎉 ਤੁਸੀਂ ਵੋਟ ਪਾਉਣ ਦੇ ਯੋਗ ਹੋ!",
-    notEligible: "ਤੁਸੀਂ ਅਜੇ ਯੋਗ ਨਹੀਂ ਹੋ",
-    startRegistration: "ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸ਼ੁਰੂ ਕਰੋ",
-    setReminder: "ਰਿਮਾਈਂਡਰ ਸੈੱਟ ਕਰੋ",
-    registration: "ਰਜਿਸਟ੍ਰੇਸ਼ਨ",
-    registrationSub: "ਅੱਗੇ ਵਧਣ ਲਈ ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਪੂਰੀ ਕਰੋ",
-    email: "ਈਮੇਲ ਪਤਾ",
-    mobile: "ਮੋਬਾਈਲ ਨੰਬਰ (ਵਿਕਲਪਿਕ)",
-    continue: "ਜਾਰੀ ਰੱਖੋ",
-    verification: "ਪੜਤਾਲ",
-    verificationSub: "ਤੁਹਾਡੀ ਈਮੇਲ 'ਤੇ ਭੇਜਿਆ ਗਿਆ ਕੋਡ ਦਰਜ ਕਰੋ",
-    verifyOtp: "OTP ਦੀ ਪੜਤਾਲ ਕਰੋ",
-    resendCode: "ਕੋਡ ਦੁਬਾਰਾ ਭੇਜੋ",
-    changeEmail: "ਈਮੇਲ ਬਦਲੋ",
-    journey: "ਵੋਟਿੰਗ ਯਾਤਰਾ",
-    journeySub: "ਆਪਣੀ ਪ੍ਰਗਤੀ ਨੂੰ ਟ੍ਰੈਕ ਕਰੋ",
-    continueJourney: "ਯਾਤਰਾ ਜਾਰੀ ਰੱਖੋ",
-    findBooth: "ਬੂਥ ਦੇ ਵੇਰਵੇ ਲੱਭੋ",
-    welcome: "ਸਹਾਇਕ ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ",
-    onboardingSub: "ਸ਼ੁਰੂਆਤ ਕਰਨ ਲਈ ਤੁਰੰਤ ਗਾਈਡ",
-    boothDetails: "ਬੂਥ ਦੇ ਵੇਰਵੇ",
-    findMyBooth: "ਮੇਰਾ ਬੂਥ ਲੱਭੋ",
-    selectCandidate: "ਉਮੀਦਵਾਰ ਚੁਣੋ",
-    evmConfirm: "EVM ਪੁਸ਼ਟੀਕਰਨ",
-    confirmVote: "ਵੋਟ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
-    cancel: "ਰੱਦ ਕਰੋ",
-    voteRecorded: "ਵੋਟ ਸਫਲਤਾਪੂਰਵਕ ਦਰਜ ਕੀਤੀ ਗਈ!",
-    returnHome: "ਮੁੱਖ ਸਕ੍ਰੀਨ 'ਤੇ ਜਾਓ",
-    downloadReceipt: "ਰਸੀਦ ਡਾਊਨਲੋਡ ਕਰੋ",
-    referenceId: "ਹਵਾਲਾ ID",
-    back: "ਪਿੱਛੇ",
-    pincode: "ਸ਼ਹਿਰ ਜਾਂ ਪਿੰਨ ਕੋਡ",
-    step1: "ਯੋਗਤਾ",
-    step2: "ਰਜਿਸਟ੍ਰੇਸ਼ਨ",
-    step3: "ਪੜਤਾਲ",
-    step4: "ਵੋਟਿੰਗ",
-    helpTitle: "ਅਸੀਂ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦੇ ਹਾਂ?",
-    helpSub: "ਆਪਣੀ ਸਮੱਸਿਆ ਚੁਣੋ",
-    resolved: "ਹੱਲ ਹੋ ਗਿਆ",
-    dashboard: "ਡੈਸ਼ਬੋਰਡ",
-    issue1: "ਵੋਟਰ ਸੂਚੀ ਵਿੱਚ ਨਾਮ ਨਹੀਂ ਹੈ",
-    issue2: "ਵੋਟਰ ਆਈਡੀ ਵਿੱਚ ਗਲਤ ਵੇਰਵੇ",
-    issue3: "ਨਵੀਂ ਵੋਟਰ ਰਜਿਸਟ੍ਰੇਸ਼ਨ",
-    issue4: "ਪਤਾ ਬਦਲਣਾ",
-    mobileView: "ਮੋਬਾਈਲ ਵਿਊ",
-    webView: "ਵੈੱਬ ਵਿਊ",
-    healthMeter: "ਨਾਗਰਿਕ ਸਿਹਤ ਸਕੋਰ",
-    quickActions: "ਤੁਰੰਤ ਕਾਰਵਾਈਆਂ",
-    roadmap: "ਚੋਣ ਰੋਡਮੈਪ",
-    notif1: "18 ਸਾਲ ਤੋਂ ਉੱਪਰ ਦੇ ਸਾਰੇ ਨਾਗਰਿਕ ਯੋਗ ਹਨ।",
-    notif2: "ਆਪਣੇ ਪੋਲਿੰਗ ਸਟੇਸ਼ਨ ਨੂੰ ਲੱਭਣ ਲਈ ਬੂਥ ਸਰਚ ਦੀ ਵਰਤੋਂ ਕਰੋ।",
-    assistantTitle: "ਨਾਗਰਿਕ ਸਹਾਇਕ",
-    assistantGreet: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ ਅੱਜ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹਾਂ?",
-    askBooth: "ਮੇਰਾ ਬੂਥ ਕਿੱਥੇ ਹੈ?",
-    askDocs: "ਕਿਹੜੇ ਦਸਤਾਵੇਜ਼ ਚਾਹੀਦੇ ਹਨ?",
-    askHow: "ਵੋਟ ਕਿਵੇਂ ਪਾਉਣੀ ਹੈ?",
-    suggestion1: "ਯੋਗਤਾ ਦੀ ਜਾਂਚ ਕਰੋ",
-    suggestion2: "ਮੇਰਾ ਬੂਥ ਲੱਭੋ",
-    suggestion3: "ਵੋਟਿੰਗ ਗਾਈਡ"
-  }
 };
 
-const JOURNEY_STEPS = [
-  { key: 'step1', icon: <UserCheck size={20} /> },
-  { key: 'step2', icon: <ClipboardList size={20} /> },
-  { key: 'step3', icon: <Mail size={20} /> },
-  { key: 'step4', icon: <Vote size={20} /> }
-];
+
 
 const Logo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="app-logo-svg">
-    <rect width="40" height="40" rx="10" fill="white" />
-    <path d="M11 20L17 26L29 14" stroke="url(#logo-grad)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+    <rect width="40" height="40" rx="8" fill="url(#logo-grad)" />
+    <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 32H30" stroke="white" strokeWidth="3" strokeLinecap="round" />
     <defs>
       <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#60a5fa" />
-        <stop offset="1" stopColor="#1d4ed8" />
+        <stop stopColor="#0ea5e9" />
+        <stop offset="1" stopColor="#1e40af" />
       </linearGradient>
     </defs>
   </svg>
@@ -1412,15 +1074,20 @@ function App() {
 
     setLoading(true);
     try {
-      await fetch(API_URL, {
+      const res = await fetch(API_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ action: 'send_otp', email })
       });
-      setOtp('');
-      setResendMsg('');
-      setScreen('otp');
+      const data = await res.json();
+      
+      if (data.success !== false) {
+        setOtp('');
+        setResendMsg('');
+        setScreen('otp');
+      } else {
+        setError(data.message || 'Failed to send OTP. Please try again.');
+      }
     } catch (err) {
       setError('Network error. Please check your connection.');
     } finally {
@@ -1439,26 +1106,19 @@ function App() {
 
     setLoading(true);
     try {
-      // Simulate real verification
-      // For demo purposes, we'll accept '123456' as the correct OTP
-      // or any OTP if the API is expected to always succeed (but the user said it's not set)
-      
       const response = await fetch(API_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors', // Keeping this as it might be a cross-origin GAS script
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ action: 'verify_otp', email, otp })
       });
-
-      // If the user says 'default password is taking', it means they want a specific one to work
-      // or a real check. Since we can't read 'no-cors' response, we'll enforce '123456' for the demo
-      // unless they are using a real email flow.
       
-      if (otp === '123456' || otp === '888888') {
+      const data = await response.json();
+      
+      if (data.success) {
         setCurrentStepIndex(2);
-        setScreen('onboarding');
+        setScreen('dashboard');
       } else {
-        setError('Invalid OTP. Please try "123456" for testing.');
+        setError(data.message || 'Invalid OTP. Please check your email and try again.');
       }
     } catch (err) {
       setError('Network error. Please check your connection.');
@@ -1509,40 +1169,24 @@ function App() {
     try {
       const res = await fetch(API_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ action: 'find_booth', input: cleanInput })
       });
 
-      if (!res.ok) throw new Error('Network response was not ok');
-
       const data = await res.json();
       
-      // Inject some dynamic-looking data if the API returns partial info
-      const dynamicData = {
-        ...data,
-        success: true,
-        booth: data.booth || `Station #${Math.floor(Math.random() * 900) + 100}`,
-        address: data.address || `${cleanInput.toUpperCase()} Public School, Wing B`,
-        date: data.date || '2026-05-15',
-        time: data.time || '08:00 AM - 05:00 PM'
-      };
-
-      const formattedData = formatBoothData(dynamicData);
-      if (formattedData) {
-        setVotingDetails(formattedData);
+      if (data.success && data.booth) {
+        const formattedData = formatBoothData(data);
+        if (formattedData) {
+          setVotingDetails(formattedData);
+        } else {
+          setError(`Invalid booth data format received.`);
+        }
       } else {
-        setError(`No booth found for "${locationInput}". Try another location.`);
+        setError(data.message || `No booth found for "${locationInput}". Try another location.`);
       }
     } catch (err) {
-      // Fallback for demo if API is down or blocked
-      const fallbackData = {
-        success: true,
-        booth: `Primary School #${Math.floor(Math.random() * 900) + 100}`,
-        address: `Near Main Road, ${cleanInput.toUpperCase()}`,
-        date: '2026-05-20',
-        time: '07:00 AM - 06:00 PM'
-      };
-      setVotingDetails(formatBoothData(fallbackData));
+      setError('Network error. Please check your connection.');
     } finally {
       setLoading(false);
     }
@@ -1688,77 +1332,6 @@ function App() {
       </button>
     </div>
   );
-
-  const renderJourney = () => (
-    <div className="card">
-      <div className="card-header">
-        <div style={{ background: '#f0f9ff', width: '64px', height: '64px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-          <Vote size={32} color="#0ea5e9" />
-        </div>
-        <h1 className="card-title">{t.journey}</h1>
-        <p className="card-subtitle">{t.journeySub}</p>
-      </div>
-
-      <div className="progress-vertical">
-        {JOURNEY_STEPS.map((step, index) => (
-          <div key={index} className={`step ${index < currentStepIndex ? 'completed' : ''} ${index === currentStepIndex ? 'active' : ''}`}>
-            <div className="step-icon">
-              {index < currentStepIndex ? <CheckCircle2 size={16} /> : step.icon}
-            </div>
-            <div className="flex-1">
-              <p className="font-bold" style={{ fontWeight: 600 }}>{t[step.key]}</p>
-              <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                {index < currentStepIndex ? (lang === 'en' ? 'Completed' : 'पूरा हुआ') : index === currentStepIndex ? (lang === 'en' ? 'In Progress' : 'प्रगति पर है') : (lang === 'en' ? 'Pending' : 'लंबित')}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <button className="btn btn-primary mt-6" onClick={() => setScreen('dashboard')}>
-        {t.continueJourney} <ChevronRight size={20} />
-      </button>
-    </div>
-  );
-
-  const renderOnboarding = () => (
-    <div className="card">
-      <div className="card-header">
-        <h1 className="card-title">{t.welcome}</h1>
-        <p className="card-subtitle">{t.onboardingSub}</p>
-      </div>
-
-      <div className="flex flex-col gap-6" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <section>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-            <Info size={18} color="var(--accent-blue)" />
-            <h3 style={{ fontSize: '16px', fontWeight: 600 }}>Process Overview</h3>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingLeft: '28px' }}>
-            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>1. Identity Verification</p>
-            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>2. Booth Selection</p>
-            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>3. Secure Voting</p>
-          </div>
-        </section>
-
-        <section>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-            <AlertCircle size={18} color="var(--warning)" />
-            <h3 style={{ fontSize: '16px', fontWeight: 600 }}>Keep Handy</h3>
-          </div>
-          <div style={{ background: '#fffbeb', padding: '16px', borderRadius: '12px', border: '1px solid #fef3c7' }}>
-            <p style={{ fontSize: '14px', color: '#92400e' }}>Ensure you have your Aadhaar card and a valid address proof before proceeding.</p>
-          </div>
-        </section>
-      </div>
-
-      <button className="btn btn-primary mt-4" onClick={() => setScreen('dashboard')}>
-        {lang === 'en' ? 'Start Now' : (lang === 'hi' ? 'अभी शुरू करें' : 'आता सुरू करा')} <ChevronRight size={20} />
-      </button>
-    </div>
-  );
-
-
   const renderDashboard = () => {
     let readinessScore = 0;
     if (eligibilityResult?.eligible) readinessScore += 25;
@@ -1766,28 +1339,25 @@ function App() {
     if (votingDetails) readinessScore += 25;
     if (selectedCandidate) readinessScore += 25;
 
+    const JOURNEY_MAP = [
+      { id: 'eligibility', step: 'Step 1', title: t.step1, done: eligibilityResult?.eligible, desc: t.roadmapDesc1, icon: <UserCheck size={20} /> },
+      { id: 'registration', step: 'Step 2', title: t.step2, done: currentStepIndex >= 2, desc: t.roadmapDesc2, icon: <ClipboardList size={20} /> },
+      { id: 'voting_details', step: 'Step 3', title: t.step3, done: !!votingDetails, desc: t.roadmapDesc3, icon: <MapPin size={20} /> },
+      { id: 'candidates', step: 'Step 4', title: t.step4, done: !!selectedCandidate, desc: t.roadmapDesc4, icon: <Vote size={20} /> }
+    ];
+
     return (
       <div className="dashboard-container animate-fade-in">
         
         {/* Personalized Greeting */}
         <header className="greeting-section">
-          <h1 className="greeting-title">
-            {t.greeting}, Citizen
+          <h1 className="greeting-title" style={{ fontSize: '26px' }}>
+            Your step-by-step voting assistant
           </h1>
           <p className="greeting-sub">
             {t.greetingSub}
           </p>
         </header>
-
-        {/* Notifications Bar */}
-        <div className="notif-bar glass">
-          <div className="notif-content">
-            <Bell size={18} className="notif-icon" />
-            <div className="notif-text-scroll">
-              <span>{t.notif1} &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; {t.notif2} &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; {t.downloadSlip}</span>
-            </div>
-          </div>
-        </div>
 
         {/* Civic Health Meter */}
         <div className="premium-health-card">
@@ -1798,7 +1368,7 @@ function App() {
               </div>
               <div>
                 <h2 style={{ fontSize: '18px', fontWeight: 700 }}>{t.healthMeter}</h2>
-                <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{t.readyMsg}</p>
+                <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{readinessScore === 100 ? t.readyMsg : t.pendingMsg}</p>
               </div>
             </div>
             <div className="score-display">
@@ -1810,78 +1380,41 @@ function App() {
             <div className="progress-glow" style={{ width: `${readinessScore}%` }}></div>
             <div className="progress-fill" style={{ width: `${readinessScore}%` }}></div>
           </div>
-          <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '12px', textAlign: 'center' }}>
-            {readinessScore === 100 ? t.readyMsg : t.pendingMsg}
-          </p>
         </div>
 
-        {/* Quick Actions */}
-        <section className="section-container">
-          <h3 className="section-title">{t.quickActions}</h3>
-          <div className="action-grid">
-            <div className="premium-action-card blue" onClick={() => setScreen('voting_details')}>
-              <div className="action-icon-container">
-                <MapPin size={24} />
-              </div>
-              <div className="action-text">
-                <span className="action-title">{t.findBooth}</span>
-                <span className="action-desc">Locate your station</span>
-              </div>
-            </div>
-            <div className="premium-action-card purple" onClick={() => setScreen('eligibility')}>
-              <div className="action-icon-container">
-                <UserCheck size={24} />
-              </div>
-              <div className="action-text">
-                <span className="action-title">{t.step1}</span>
-                <span className="action-desc">Verify your age</span>
-              </div>
-            </div>
-            <div className="premium-action-card orange" onClick={() => setScreen('voting_guide')}>
-              <div className="action-icon-container">
-                <FileText size={24} />
-              </div>
-              <div className="action-text">
-                <span className="action-title">{t.votingGuideTitle}</span>
-                <span className="action-desc">Learn the process</span>
-              </div>
-            </div>
-            <div className="premium-action-card green" onClick={() => setScreen('candidates')}>
-              <div className="action-icon-container">
-                <Vote size={24} />
-              </div>
-              <div className="action-text">
-                <span className="action-title">{t.startSimulation}</span>
-                <span className="action-desc">Practice voting</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Election Roadmap */}
+        {/* The 4-Step Guided Journey */}
         <section className="section-container">
           <h3 className="section-title">{t.roadmap}</h3>
-          <div className="roadmap-visual">
-            <div className="roadmap-list">
-              {[
-                { title: t.step1, done: eligibilityResult?.eligible, desc: t.roadmapDesc1, icon: <UserCheck size={16} /> },
-                { title: t.step2, done: currentStepIndex >= 2, desc: t.roadmapDesc2, icon: <ClipboardList size={16} /> },
-                { title: t.findBooth, done: !!votingDetails, desc: t.roadmapDesc3, icon: <MapPin size={16} /> },
-                { title: t.step4, done: !!selectedCandidate, desc: t.roadmapDesc4, icon: <Vote size={16} /> }
-              ].map((step, idx) => (
-                <div key={idx} className={`roadmap-item ${step.done ? 'completed' : (idx === 0 || (idx > 0 && [eligibilityResult?.eligible, currentStepIndex >= 2, !!votingDetails][idx-1]) ? 'active' : '')}`}>
-                  <div className="roadmap-marker">
-                    <div className="roadmap-dot">
-                      {step.done ? <CheckCircle2 size={16} /> : step.icon}
-                    </div>
-                    {idx < 3 && <div className="roadmap-line"></div>}
+          <div className="journey-linear-flow">
+            {JOURNEY_MAP.map((step, idx) => (
+              <div 
+                key={idx} 
+                className={`journey-card ${step.done ? 'completed' : (idx === 0 || JOURNEY_MAP[idx-1].done ? 'active' : 'locked')}`}
+                onClick={() => (idx === 0 || JOURNEY_MAP[idx-1].done) && setScreen(step.id)}
+              >
+                <div className="journey-step-indicator">{step.step}</div>
+                <div className="journey-card-content">
+                  <div className="journey-icon-box">
+                    {step.done ? <CheckCircle2 size={24} color="#10b981" /> : step.icon}
                   </div>
-                  <div className="roadmap-content">
+                  <div className="journey-details">
                     <h4>{step.title}</h4>
                     <p>{step.desc}</p>
                   </div>
+                  <ChevronRight size={20} className="journey-arrow" />
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Quick Help for Blockers */}
+        <section className="section-container">
+          <h3 className="section-title">{t.quickActions}</h3>
+          <div className="help-links-grid">
+            <div className="help-item-card" onClick={() => setScreen('issue')}>
+              <AlertCircle size={20} color="var(--warning)" />
+              <span>Fix voting-related problems</span>
             </div>
           </div>
         </section>
@@ -1891,40 +1424,7 @@ function App() {
   };
 
 
-  const renderVotingGuide = () => (
-    <div className="card voting-guide-card animate-fade-in">
-      <div className="card-header">
-        <h1 className="card-title premium-gradient-text">{t.votingGuideTitle}</h1>
-        <p className="card-subtitle">{t.votingGuideSub}</p>
-      </div>
 
-      <div className="guide-steps">
-        {[
-          { title: t.guideStep1, desc: t.guideStep1Desc, icon: <FileText color="#3b82f6" /> },
-          { title: t.guideStep2, desc: t.guideStep2Desc, icon: <MapPin color="#8b5cf6" /> },
-          { title: t.guideStep3, desc: t.guideStep3Desc, icon: <UserCheck color="#10b981" /> },
-          { title: t.guideStep4, desc: t.guideStep4Desc, icon: <Vote color="#f59e0b" /> }
-        ].map((step, i) => (
-          <div key={i} className="guide-step-item">
-            <div className="guide-step-icon">{step.icon}</div>
-            <div className="guide-step-content">
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div style={{ marginTop: '32px', display: 'flex', gap: '16px' }}>
-        <button className="btn btn-secondary" style={{ flex: 1 }} onClick={() => setScreen('dashboard')}>
-          <ArrowLeft size={18} /> {t.back}
-        </button>
-        <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => setScreen('candidates')}>
-          {t.startSimulation}
-        </button>
-      </div>
-    </div>
-  );
 
   const renderIssue = () => (
     <div className="card">
@@ -2041,7 +1541,7 @@ function App() {
     <div className="card">
       <div className="card-header">
         <h1 className="card-title">{t.selectCandidate}</h1>
-        <p className="card-subtitle">{t.eligibilitySub}</p>
+        <p className="card-subtitle">{t.evmConfirm}</p>
       </div>
 
       <div className="candidate-list">
@@ -2132,8 +1632,13 @@ function App() {
       <div className="mesh-bg"></div>
       <header className="app-header">
         <div className="header-brand">
-          <Vote size={32} color="var(--accent-blue)" />
-          <span className="header-title">{t.appTitle}</span>
+          <div className="header-branding">
+            <Vote size={32} color="var(--accent-blue)" />
+            <div className="brand-text-stack">
+              <span className="header-title">{t.appTitle}</span>
+              <span className="header-tagline">{t.tagline}</span>
+            </div>
+          </div>
         </div>
         <div className="header-status">
           <div className="header-controls">
@@ -2172,18 +1677,15 @@ function App() {
         {screen === 'eligibility' && renderEligibility()}
         {screen === 'registration' && renderRegistration()}
         {screen === 'otp' && renderOtp()}
-        {screen === 'onboarding' && renderOnboarding()}
         {screen === 'issue' && renderIssue()}
         {screen === 'solution_name_not_in_list' && renderSolution(t.issue1, t.sol1)}
         {screen === 'solution_wrong_details' && renderSolution(t.issue2, t.sol2)}
         {screen === 'solution_new_registration' && renderSolution(t.issue3, t.sol3)}
         {screen === 'solution_address_change' && renderSolution(t.issue4, t.sol4)}
-        {screen === 'voting_guide' && renderVotingGuide()}
         {screen === 'voting_details' && renderVotingDetails()}
         {screen === 'candidates' && renderCandidateSelection()}
         {screen === 'evm' && renderEVM()}
         {screen === 'vote_success' && renderVoteSuccess()}
-        {screen === 'journey' && renderJourney()}
       </main>
 
       {/* Render AI Assistant Globally */}

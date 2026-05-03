@@ -1,6 +1,10 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="40" height="40" rx="10" fill="#1E40AF"/>
-  <path d="M12 20L18 26L28 14" stroke="#F97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="8" y="8" width="24" height="24" rx="4" stroke="white" stroke-width="2" stroke-opacity="0.3"/>
-  <circle cx="32" cy="8" r="4" fill="#10B981"/>
+<svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="url(#logo-grad)" />
+  <path d="M11 20L17 26L29 14" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+  <defs>
+    <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#60a5fa" />
+      <stop offset="1" stopColor="#1d4ed8" />
+    </linearGradient>
+  </defs>
 </svg>
